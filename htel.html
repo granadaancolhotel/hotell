@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granada Hotel - Tentang Kami & Lowongan Kerja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0d6efd, #20c997);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .parallax {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border-radius: 15px;
+            margin-bottom: 50px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .card-content ul {
+            color: #555;
+            padding-left: 18px;
+            margin: 15px 0;
+        }
+
+        .card-content ul li {
+            margin-bottom: 8px;
+        }
+
+        .card-content strong {
+            color: #333;
+        }
+
+        .info-box {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .info-box strong {
+            color: #333;
+        }
+
+        .cta-box {
+            margin-top: 60px;
+            padding: 40px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #0d6efd, #20c997);
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+
+        .cta-box ol {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            padding-left: 20px;
+        }
+
+        .cta-box ol li {
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .cta-box a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .cta-box a:hover {
+            text-decoration: none;
+        }
+
+        .deadline {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #0d6efd;
+            font-size: 1.1em;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            .parallax {
+                font-size: 1.3em;
+                height: 150px;
+            }
+
+            .cta-box {
+                padding: 25px;
+            }
+
+            .cta-box ol {
+                padding-left: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section: Tentang Kami -->
+    <section id="tentang">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+
+            <div class="parallax" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIzMDAiIHZpZXdCb3g9IjAgMCAxMjAwIDMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTJmNGY4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkhlbGxvLCBXZWxjb21lIHRvIEdyYW5hZGEgSG90ZWw8L3RleHQ+PC9zdmc+');">
+                Selamat Datang di Granada Hotel
+            </div>
+
+            <div class="grid">
+                <!-- Card 1: Hotel Room -->
+                <div class="card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDUwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2VlZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Ib3RlbCBSb29tPC90ZXh0Pjwvc3ZnPg==" alt="Hotel Room">
+                    <div class="card-content">
+                        <h3>200 Unit Kamar Eksklusif</h3>
+                        <p>
+                            Setiap kamar menawarkan pemandangan langsung ke Pantai Ancol dari balkon pribadi,
+                            dengan fasilitas premium dan layanan eksklusif.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Suppliers -->
+                <div class="card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDUwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2VlZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5TdXBwbGllcnM8L3RleHQ+PC9zdmc+" alt="Suppliers">
+                    <div class="card-content">
+                        <h3>Pemasok Terpercaya</h3>
+                        <p>
+                            Kami bermitra dengan Apollo Mart, Pine Mart, dan Flamboyant Mart untuk memastikan
+                            kebutuhan hotel selalu berkualitas tinggi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Team -->
+                <div class="card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDUwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2VlZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5UZWFtPC90ZXh0Pjwvc3ZnPg==" alt="Team">
+                    <div class="card-content">
+                        <h3>Tim Profesional</h3>
+                        <p>
+                            Dengan tim profesional lintas bidang, kami berkomitmen memberikan
+                            layanan terbaik bagi setiap tamu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <p style="margin-bottom: 15px;">
+                    <strong>Alamat:</strong> Jalan Jatayu No. 112, Jakarta Utara, DKI Jakarta
+                </p>
+                <p>
+                    <strong>Rekening Bank:</strong> Bank Politeknik, No. Rekening Giro 456643
+                </p>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #888;">
+                    Transaksi kredit dengan syarat 2/10, n/30 untuk pembelian dari pemasok.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Lowongan Kerja -->
+    <section id="lowongan">
+        <div class="container">
+            <h2>Lowongan Kerja – Bergabunglah dengan Kami</h2>
+
+            <p class="intro-text">
+                Granada Hotel membuka kesempatan bagi kandidat profesional untuk bergabung bersama kami.
+            </p>
+
+            <p class="deadline">
+                Batas akhir pengiriman lamaran: 1 Maret 2026
+            </p>
+
+            <div class="grid">
+                <!-- Posisi: Administrasi -->
+                <div class="card" style="border-top: 6px solid #0d6efd;">
+                    <div class="card-content">
+                        <h3 style="color: #0d6efd;">Administrasi (1 Posisi)</h3>
+
+                        <p><strong>Jenis Kontrak:</strong> Full-time</p>
+                        <p><strong>Lokasi Kerja:</strong> Granada Hotel, Jl. Jatayu No. 112, Jakarta Utara, DKI Jakarta</p>
+
+                        <p style="margin-top: 15px;">
+                            Bertanggung jawab dalam pengelolaan dokumen operasional hotel, pengarsipan,
+                            penginputan data, serta dukungan administrasi bagi seluruh unit kerja.
+                        </p>
+
+                        <p style="margin-top: 15px;"><strong>Kualifikasi:</strong></p>
+                        <ul>
+                            <li>Minimal D3/S1 Administrasi atau Manajemen Perkantoran</li>
+                            <li>Pengalaman minimal 1 tahun di bidang administrasi</li>
+                            <li>Menguasai Microsoft Word, Excel, dan pengelolaan arsip digital</li>
+                            <li>Mampu bekerja rapi, teliti, cepat, dan terbiasa bekerja dengan deadline</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Kisaran Gaji (Jakarta area):</strong> Rp5.500.000 – Rp6.500.000</p>
+                    </div>
+                </div>
+
+                <!-- Posisi: Finance -->
+                <div class="card" style="border-top: 6px solid #20c997;">
+                    <div class="card-content">
+                        <h3 style="color: #20c997;">Finance (1 Posisi)</h3>
+
+                        <p><strong>Jenis Kontrak:</strong> Full-time</p>
+                        <p><strong>Lokasi Kerja:</strong> Granada Hotel, Jl. Jatayu No. 112, Jakarta Utara, DKI Jakarta</p>
+
+                        <p style="margin-top: 15px;">
+                            Bertanggung jawab atas pencatatan transaksi keuangan harian, penyusunan laporan kas,
+                            pengelolaan piutang, rekonsiliasi bank, serta pengawasan arus kas operasional hotel.
+                        </p>
+
+                        <p style="margin-top: 15px;"><strong>Kualifikasi:</strong></p>
+                        <ul>
+                            <li>Minimal S1 Akuntansi atau Keuangan</li>
+                            <li>Pengalaman minimal 1–2 tahun di bidang finance atau accounting</li>
+                            <li>Mampu menyusun laporan keuangan sederhana dan laporan cash flow</li>
+                            <li>Menguasai Microsoft Excel dan sistem pencatatan keuangan</li>
+                            <li>Memiliki integritas, ketelitian, dan kemampuan analisis yang baik</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Kisaran Gaji (Jakarta area):</strong> Rp6.500.000 – Rp8.500.000</p>
+                    </div>
+                </div>
+
+                <!-- Posisi: Manajer Operasional -->
+                <div class="card" style="border-top: 6px solid #ffc107;">
+                    <div class="card-content">
+                        <h3 style="color: #d39e00;">Manajer Operasional (1 Posisi)</h3>
+
+                        <p><strong>Jenis Kontrak:</strong> Full-time</p>
+                        <p><strong>Lokasi Kerja:</strong> Granada Hotel, Jl. Jatayu No. 112, Jakarta Utara, DKI Jakarta</p>
+
+                        <p style="margin-top: 15px;">
+                            Mengelola dan mengawasi seluruh kegiatan operasional hotel yang meliputi
+                            Front Office, Housekeeping, serta Food & Beverage untuk memastikan
+                            standar pelayanan, efisiensi operasional, dan target kinerja tercapai.
+                        </p>
+
+                        <p style="margin-top: 15px;"><strong>Kualifikasi:</strong></p>
+                        <ul>
+                            <li>Minimal S1 Perhotelan atau Manajemen</li>
+                            <li>Pengalaman minimal 2–3 tahun sebagai Supervisor atau Manajer Operasional hotel</li>
+                            <li>Berpengalaman memimpin minimal 10–20 orang staf lintas divisi</li>
+                            <li>Memahami SOP operasional hotel, pelayanan tamu, dan pengendalian mutu layanan</li>
+                            <li>Memiliki kemampuan leadership, problem solving, serta komunikasi yang kuat</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Kisaran Gaji (Jakarta area):</strong> Rp10.000.000 – Rp15.000.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panduan Lamaran -->
+            <div class="cta-box">
+                <h3>Panduan Pengiriman Lamaran</h3>
+
+                <ol>
+                    <li>Siapkan CV terbaru dan surat lamaran.</li>
+                    <li>Gabungkan seluruh berkas dalam satu file PDF.</li>
+                    <li>Gunakan subjek email: <strong>Lamaran_[Nama Posisi]_[Nama Lengkap]</strong>.</li>
+                    <li>Kirim lamaran ke alamat email berikut:</li>
+                </ol>
+
+                <p style="margin-top: 20px; font-size: 1.3em;">
+                    
